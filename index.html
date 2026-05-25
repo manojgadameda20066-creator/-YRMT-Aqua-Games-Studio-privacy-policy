@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy – YRMT Aqua Games Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --deep:    #07111f;
+    --mid:     #0c2f58;
+    --bright:  #00c6e0;
+    --light:   #7ee8f8;
+    --foam:    #d0f4fc;
+    --gold:    #f4c430;
+    --purple:  #7c3aed;
+    --green:   #10b981;
+    --text:    #e2f4fa;
+    --muted:   #7fb8cc;
+    --card:    rgba(12,47,88,0.45);
+    --border:  rgba(0,198,224,0.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--deep);
+    color:var(--text);
+    font-family:'Lora',Georgia,serif;
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+
+  /* ── Background ── */
+  body::before{
+    content:'';
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse at 15% 40%,rgba(0,198,224,.13) 0%,transparent 55%),
+      radial-gradient(ellipse at 85% 15%,rgba(124,58,237,.10) 0%,transparent 50%),
+      radial-gradient(ellipse at 55% 85%,rgba(0,80,160,.14) 0%,transparent 55%);
+  }
+
+  /* ── Bubbles ── */
+  .bubbles{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+  .bubble{
+    position:absolute;bottom:-60px;border-radius:50%;
+    background:rgba(0,198,224,.07);
+    border:1px solid rgba(0,198,224,.16);
+    animation:rise linear infinite;
+  }
+  .bubble:nth-child(1){width:16px;height:16px;left:8%;animation-duration:13s;animation-delay:0s;}
+  .bubble:nth-child(2){width:28px;height:28px;left:22%;animation-duration:17s;animation-delay:2s;}
+  .bubble:nth-child(3){width:11px;height:11px;left:38%;animation-duration:11s;animation-delay:5s;}
+  .bubble:nth-child(4){width:22px;height:22px;left:52%;animation-duration:15s;animation-delay:1s;}
+  .bubble:nth-child(5){width:9px;height:9px;left:66%;animation-duration:12s;animation-delay:4s;}
+  .bubble:nth-child(6){width:34px;height:34px;left:80%;animation-duration:19s;animation-delay:3s;}
+  .bubble:nth-child(7){width:14px;height:14px;left:92%;animation-duration:14s;animation-delay:7s;}
+  @keyframes rise{
+    0%{transform:translateY(0) scale(1);opacity:0;}
+    10%{opacity:1;}90%{opacity:.5;}
+    100%{transform:translateY(-110vh) scale(1.1);opacity:0;}
+  }
+
+  /* ── Sticky nav ── */
+  .topbar{
+    position:sticky;top:0;z-index:100;
+    background:rgba(7,17,31,.85);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--border);
+    padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:10px;
+  }
+  .topbar-brand{
+    font-family:'Raleway',sans-serif;
+    font-weight:900;font-size:17px;
+    color:var(--bright);
+    letter-spacing:.5px;
+    text-shadow:0 0 20px rgba(0,198,224,.5);
+  }
+  .topbar-sub{
+    font-family:'Raleway',sans-serif;
+    font-size:12px;font-weight:600;
+    color:var(--muted);letter-spacing:1px;
+    text-transform:uppercase;
+  }
+
+  /* ── Wrapper ── */
+  .wrapper{
+    position:relative;z-index:1;
+    max-width:880px;margin:0 auto;
+    padding:60px 24px 90px;
+  }
+
+  /* ── Header ── */
+  header{text-align:center;margin-bottom:52px;animation:fadeDown .8s ease both;}
+  .studio-badge{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--card);border:1px solid var(--border);
+    border-radius:40px;padding:8px 22px;margin-bottom:22px;
+    backdrop-filter:blur(12px);
+  }
+  .studio-badge .dot{
+    width:10px;height:10px;border-radius:50%;
+    background:var(--bright);box-shadow:0 0 10px var(--bright);
+    animation:blink 2s ease-in-out infinite;
+  }
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+  .studio-badge span{
+    font-family:'Raleway',sans-serif;font-size:13px;
+    font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    color:var(--light);
+  }
+  h1{
+    font-family:'Raleway',sans-serif;
+    font-size:clamp(2.2rem,6vw,3.6rem);
+    font-weight:900;line-height:1.1;letter-spacing:-1px;color:#fff;
+  }
+  h1 em{font-style:normal;color:var(--bright);text-shadow:0 0 30px rgba(0,198,224,.6);}
+  .tagline{
+    font-family:'Raleway',sans-serif;font-size:14px;
+    color:var(--muted);letter-spacing:.8px;margin-top:12px;
+  }
+  .wave{
+    margin:28px auto 0;width:100%;max-width:420px;height:3px;
+    background:linear-gradient(90deg,transparent,var(--bright),var(--light),var(--bright),transparent);
+    border-radius:2px;position:relative;
+  }
+  .wave::after{content:'';position:absolute;inset:0;background:inherit;filter:blur(6px);opacity:.6;}
+
+  /* ── Feature pills ── */
+  .pills{
+    display:flex;flex-wrap:wrap;gap:10px;
+    justify-content:center;margin-bottom:44px;
+    animation:fadeUp .8s .2s ease both;
+  }
+  .pill{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:30px;padding:8px 18px;
+    font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;
+    color:var(--foam);backdrop-filter:blur(8px);
+    display:flex;align-items:center;gap:8px;
+  }
+
+  /* ── Intro ── */
+  .intro{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:20px;padding:30px 34px;margin-bottom:32px;
+    backdrop-filter:blur(14px);font-size:15.5px;line-height:1.85;
+    color:var(--muted);animation:fadeUp .8s .3s ease both;
+  }
+  .intro strong{color:var(--foam);}
+
+  /* ── Universal banner ── */
+  .universal-banner{
+    background:linear-gradient(135deg,rgba(124,58,237,.25),rgba(0,198,224,.15));
+    border:1px solid rgba(124,58,237,.4);
+    border-radius:18px;padding:22px 28px;margin-bottom:36px;
+    display:flex;align-items:center;gap:16px;
+    animation:fadeUp .8s .35s ease both;
+  }
+  .universal-banner .icon{font-size:32px;flex-shrink:0;}
+  .universal-banner p{
+    font-family:'Raleway',sans-serif;font-size:14px;
+    font-weight:600;color:var(--foam);line-height:1.7;
+  }
+  .universal-banner p span{color:var(--light);}
+
+  /* ── Section ── */
+  .section{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:20px;padding:30px 34px;margin-bottom:22px;
+    backdrop-filter:blur(14px);
+    animation:fadeUp .8s ease both;
+    transition:border-color .3s,box-shadow .3s;
+  }
+  .section:hover{
+    border-color:rgba(0,198,224,.45);
+    box-shadow:0 0 40px rgba(0,198,224,.07);
+  }
+  .section-header{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+  .num{
+    flex-shrink:0;width:40px;height:40px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Raleway',sans-serif;font-weight:900;font-size:16px;color:#fff;
+    box-shadow:0 4px 16px rgba(0,198,224,.3);
+  }
+  .num.blue  {background:linear-gradient(135deg,var(--mid),var(--bright));}
+  .num.purple{background:linear-gradient(135deg,#4c1d95,#7c3aed);}
+  .num.green {background:linear-gradient(135deg,#065f46,#10b981);}
+  .num.gold  {background:linear-gradient(135deg,#92400e,#f4c430);}
+  .num.red   {background:linear-gradient(135deg,#7f1d1d,#ef4444);}
+
+  h2{font-family:'Raleway',sans-serif;font-size:18px;font-weight:700;color:var(--foam);}
+  .section p{font-size:15px;line-height:1.85;color:var(--muted);margin-bottom:12px;}
+  .section p:last-child{margin-bottom:0;}
+  .section p strong{color:var(--foam);font-weight:600;}
+  .section ul{list-style:none;margin:8px 0;padding:0;}
+  .section ul li{
+    position:relative;padding-left:22px;
+    font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:6px;
+  }
+  .section ul li::before{
+    content:'◆';position:absolute;left:0;
+    color:var(--bright);font-size:8px;top:7px;
+  }
+
+  /* sub-box */
+  .subbox{
+    background:rgba(0,198,224,.07);
+    border-left:3px solid var(--bright);
+    border-radius:0 10px 10px 0;
+    padding:14px 18px;margin-top:14px;
+    font-size:14px;color:var(--light);
+    font-family:'Raleway',sans-serif;font-weight:600;line-height:1.7;
+  }
+  .subbox.gold  {border-color:var(--gold);color:var(--gold);background:rgba(244,196,48,.06);}
+  .subbox.green {border-color:var(--green);color:var(--green);background:rgba(16,185,129,.06);}
+  .subbox.purple{border-color:#a78bfa;color:#c4b5fd;background:rgba(124,58,237,.06);}
+  .subbox.red   {border-color:#ef4444;color:#fca5a5;background:rgba(239,68,68,.06);}
+
+  /* ── Contact ── */
+  .contact{
+    background:linear-gradient(135deg,rgba(0,80,160,.3),rgba(0,198,224,.15));
+    border:1px solid rgba(0,198,224,.4);
+    border-radius:20px;padding:36px;text-align:center;
+    margin-top:36px;backdrop-filter:blur(14px);
+    animation:fadeUp .8s ease both;
+  }
+  .contact h2{font-size:22px;color:#fff;margin-bottom:10px;}
+  .contact p{font-size:15px;color:var(--muted);margin-bottom:18px;}
+  .contact-btn{
+    display:inline-block;background:var(--bright);
+    color:var(--deep);font-family:'Raleway',sans-serif;
+    font-weight:700;font-size:15px;padding:13px 34px;
+    border-radius:40px;text-decoration:none;letter-spacing:.5px;
+    transition:transform .2s,box-shadow .2s;
+    box-shadow:0 4px 24px rgba(0,198,224,.35);
+  }
+  .contact-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,198,224,.5);}
+
+  /* ── Footer ── */
+  footer{
+    text-align:center;margin-top:50px;
+    font-family:'Raleway',sans-serif;font-size:13px;
+    color:rgba(127,184,204,.45);letter-spacing:.5px;
+    animation:fadeUp .8s ease both;
+  }
+  footer span{color:var(--bright);}
+
+  /* ── Animations ── */
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-24px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp  {from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)}}
+  .section:nth-child(1){animation-delay:.36s}
+  .section:nth-child(2){animation-delay:.42s}
+  .section:nth-child(3){animation-delay:.48s}
+  .section:nth-child(4){animation-delay:.54s}
+  .section:nth-child(5){animation-delay:.60s}
+  .section:nth-child(6){animation-delay:.66s}
+  .section:nth-child(7){animation-delay:.72s}
+  .section:nth-child(8){animation-delay:.78s}
+  .section:nth-child(9){animation-delay:.84s}
+  .section:nth-child(10){animation-delay:.90s}
+  .section:nth-child(11){animation-delay:.96s}
+
+  @media(max-width:600px){
+    .wrapper{padding:40px 14px 60px;}
+    .section,.intro,.contact{padding:22px 18px;}
+    h1{font-size:2rem;}
+    .topbar{padding:12px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="bubbles">
+  <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+  <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+  <div class="bubble"></div>
+</div>
+
+<!-- Sticky top bar -->
+<div class="topbar">
+  <div class="topbar-brand">⚡ YRMT Aqua Games Studio</div>
+  <div class="topbar-sub">Privacy Policy · v1.0 · 2026</div>
+</div>
+
+<div class="wrapper">
+
+  <!-- Header -->
+  <header>
+    <div class="studio-badge">
+      <div class="dot"></div>
+      <span>Legal &amp; Privacy Document</span>
+    </div>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="tagline">YRMT Aqua Games Studio &nbsp;·&nbsp; Applies to ALL Games &nbsp;·&nbsp; Effective: May 25, 2026</p>
+    <div class="wave"></div>
+  </header>
+
+  <!-- Pills -->
+  <div class="pills">
+    <div class="pill">📱 Mobile (Android &amp; iOS)</div>
+    <div class="pill">🔒 Data Protection</div>
+    <div class="pill">📢 Ad-Supported</div>
+    <div class="pill">🌍 GDPR &amp; CCPA</div>
+    <div class="pill">👤 User Rights</div>
+    <div class="pill">🎮 All Game Types</div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    Welcome to <strong>YRMT Aqua Games Studio</strong>. This Privacy Policy explains how we collect, use, disclose, and protect your information when you use any of our mobile games and applications. By downloading, installing, or playing any of our games, you agree to the practices described in this Policy. If you do not agree, please do not use our games.
+  </div>
+
+  <!-- Universal banner -->
+  <div class="universal-banner">
+    <div class="icon">🛡️</div>
+    <p>This Privacy Policy applies to <span>all games and apps published by YRMT Aqua Games Studio</span> on any platform. We are committed to protecting your personal information and your right to privacy.</p>
+  </div>
+
+  <!-- Sections -->
+  <div class="section">
+    <div class="section-header"><div class="num blue">1</div><h2>Information We Collect</h2></div>
+    <p>We collect certain information to operate, improve, and personalize our games. The types of information we may collect include:</p>
+    <p><strong>a) Information You Provide Directly:</strong></p>
+    <ul>
+      <li>Username and display name (if you create an account)</li>
+      <li>Email address (if you register or contact support)</li>
+      <li>Any content you submit through in-game chat or feedback forms</li>
+    </ul>
+    <p><strong>b) Information Collected Automatically:</strong></p>
+    <ul>
+      <li>Device information (model, operating system version, language, screen resolution)</li>
+      <li>Gameplay data (scores, session duration, level progress, in-game actions)</li>
+      <li>Advertising identifier / Ad ID (used only by ad networks for serving ads)</li>
+      <li>IP address and approximate location (country/region level only)</li>
+      <li>Crash reports and performance analytics</li>
+      <li>App version and install date</li>
+    </ul>
+    <div class="subbox">🔒 We do <strong>not</strong> collect your real name, phone number, precise GPS location, or payment card details directly. Payments are processed entirely by Google Play or Apple App Store.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="num blue">2</div><h2>How We Use Your Information</h2></div>
+    <p>We use the information we collect for the following purposes:</p>
+    <ul>
+      <li>To operate, maintain, and improve our games and services</li>
+      <li>To personalise your gaming experience (e.g., saving progress, leaderboards)</li>
+      <li>To display advertisements and offer rewarded ad features</li>
+      <li>To analyse gameplay trends and fix bugs or crashes</li>
+      <li>To respond to your support requests or feedback</li>
+      <li>To detect and prevent fraud, cheating, or abuse</li>
+      <li>To comply with legal obligations</li>
+    </ul>
+    <div class="subbox">We do <strong>not</strong> use your data for automated decision-making or profiling that produces legal effects on you.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="num gold">3</div><h2>Advertising &amp; Third-Party SDKs</h2></div>
+    <p>Our free games are supported by third-party advertising networks. These networks may collect and use your <strong>Advertising Identifier (Ad ID)</strong> to serve you relevant advertisements.</p>
+    <p>We currently use or may use the following types of ad and analytics services:</p>
+    <ul>
+      <li>Google AdMob (ads &amp; analytics) — <a href="https://policies.google.com/privacy" style="color:var(--bright);">Privacy Policy</a></li>
+      <li>Unity Ads — <a href="https://unity.com/legal/privacy-policy" style="color:var(--bright);">Privacy Policy</a></li>
+      <li>Firebase Analytics (crash reporting &amp; analytics)</li>
+    </ul>
+    <p>These third-party services operate under their own privacy policies. We encourage you to review them. You can opt out of personalised advertising at any time through your device settings:</p>
+    <ul>
+      <li><strong>Android:</strong> Settings → Google → Ads → Delete advertising ID</li>
+      <li><strong>iOS:</strong> Settings → Privacy → Tracking → disable "Allow Apps to Request to Track"</li>
+    </ul>
+    <div class="subbox gold">📢 Rewarded ads are entirely optional — you choose to watch them in exchange for in-game rewards. We never require watching ads to play.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="num blue">4</div><h2>How We Share Your Information</h2></div>
+    <p>We <strong>do not sell</strong> your personal data to third parties. We may share your information only in the following limited circumstances:</p>
+    <ul>
+      <li><strong>Service Providers:</strong> Third-party companies that help us operate our games (e.g., analytics, crash reporting, cloud storage), who are contractually bound to keep your data confidential</li>
+      <li><strong>Advertising Partners:</strong> Ad networks receive your Ad ID and device info to serve ads, subject to their own privacy policies</li>
+      <li><strong>Legal Requirements:</strong> If required by law, court order, or to protect the safety and rights of our users or the public</li>
+      <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, your data may be transferred — we will notify you in such cases</li>
+    </ul>
+    <div class="subbox">We require all third-party partners to handle your data with the same level of care and security we apply ourselves.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="num purple">5</div><h2>Children's Privacy (COPPA)</h2></div>
+    <p>Our games are not directed to children under the age of <strong>13</strong>. We do not knowingly collect personal information from children under 13.</p>
+    <p>If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at <strong>manojgadameda20066@gmail.com</strong> and we will promptly delete such information.</p>
+    <p>For games specifically designed for children, we disable personalised advertising and limit data collection to only what is strictly necessary to operate the game.</p>
+    <div class="subbox purple">⚠️ We comply with the Children's Online Privacy Protection Act (COPPA) and take the safety of minors very seriously.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="num green">6</div><h2>Data Retention</h2></div>
+    <p>We retain your information for as long as necessary to provide our services and as required by law.</p>
+    <ul>
+      <li><strong>Account data</strong> is retained for as long as your account is active</li>
+      <li><strong>Gameplay &amp; analytics data</strong> is typically retained for up to 24 months</li>
+      <li><strong>Crash reports</strong> are retained for up to 12 months</li>
+      <li>When data is no longer needed, it is securely deleted or anonymised</li>
+    </ul>
+    <p>You may request deletion of your data at any time by contacting us (see Section 8).</p>
+    <div class="subbox green">✅ After account deletion, we will remove or anonymise your personal data within 30 days, unless retention is required by law.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="num blue">7</div><h2>Data Security</h2></div>
+    <p>We implement industry-standard technical and organisational security measures to protect your information against unauthorised access, alteration, disclosure, or destruction.</p>
+    <ul>
+      <li>Data transmitted between your device and our servers is encrypted using TLS/HTTPS</li>
+      <li>Access to personal data is restricted to authorised personnel only</li>
+      <li>We regularly review and update our security practices</li>
+    </ul>
+    <p>However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="num gold">8</div><h2>Your Rights &amp; Choices</h2></div>
+    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+    <ul>
+      <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+      <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data</li>
+      <li><strong>Deletion:</strong> Request deletion of your personal data ("right to be forgotten")</li>
+      <li><strong>Portability:</strong> Request your data in a machine-readable format</li>
+      <li><strong>Objection:</strong> Object to certain processing of your data (e.g., marketing)</li>
+      <li><strong>Opt-out of Ads:</strong> Reset or delete your Advertising ID via device settings</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <strong>manojgadameda20066@gmail.com</strong>. We will respond within 30 days.</p>
+    <div class="subbox gold">🇪🇺 EU/EEA users have rights under <strong>GDPR</strong>. 🇺🇸 California residents have rights under <strong>CCPA</strong>. We honour both.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="num green">9</div><h2>GDPR – EU/EEA Users</h2></div>
+    <p>For users in the European Union or European Economic Area, we comply fully with the <strong>General Data Protection Regulation (GDPR)</strong>.</p>
+    <p>Our legal bases for processing your data are:</p>
+    <ul>
+      <li><strong>Consent:</strong> For personalised advertising (you may withdraw at any time)</li>
+      <li><strong>Legitimate Interests:</strong> For analytics, security, and improving our games</li>
+      <li><strong>Contract Performance:</strong> To provide game services you have requested</li>
+      <li><strong>Legal Obligation:</strong> Where required by applicable law</li>
+    </ul>
+    <p>You have the right to lodge a complaint with your local data protection authority if you believe we have not handled your data correctly.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="num blue">10</div><h2>CCPA – California Residents</h2></div>
+    <p>If you are a California resident, you have the following additional rights under the <strong>California Consumer Privacy Act (CCPA)</strong>:</p>
+    <ul>
+      <li>The right to know what personal information is collected, used, shared, or sold</li>
+      <li>The right to delete personal information we have collected from you</li>
+      <li>The right to opt out of the sale of your personal information</li>
+      <li>The right to non-discrimination for exercising your CCPA rights</li>
+    </ul>
+    <p>We do <strong>not sell</strong> personal information as defined under CCPA. To exercise your rights, contact us at <strong>manojgadameda20066@gmail.com</strong>.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="num purple">11</div><h2>International Data Transfers</h2></div>
+    <p>Our games are operated from India. If you are accessing our games from outside India, please be aware that your data may be transferred to, stored, and processed in India or other countries where our service providers operate.</p>
+    <p>We ensure that any such transfers are made with appropriate safeguards in place, in compliance with applicable data protection laws including GDPR.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="num red">12</div><h2>Changes to This Privacy Policy</h2></div>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or for other reasons.</p>
+    <p>When we make changes, we will:</p>
+    <ul>
+      <li>Update the "Effective Date" at the top of this page</li>
+      <li>Notify you via an in-game notice or update notification for significant changes</li>
+    </ul>
+    <p>Your continued use of our games after any changes means you accept the updated Privacy Policy. We encourage you to review this page periodically.</p>
+    <div class="subbox red">📋 Current version: <strong>v1.0</strong> — Last updated: <strong>May 25, 2026</strong></div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact">
+    <h2>Contact Us About Privacy</h2>
+    <p>Have questions or concerns about your data? We take privacy seriously and will respond within 30 days.</p>
+    <a href="mailto:manojgadameda20066@gmail.com" class="contact-btn">📧 manojgadameda20066@gmail.com</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 <span>YRMT Aqua Games Studio</span>. All Rights Reserved.</p>
+    <p style="margin-top:6px;">Privacy Policy · Version 1.0 · Last Updated: May 25, 2026</p>
+    <p style="margin-top:6px;">Applies to all current &amp; future titles published by YRMT Aqua Games Studio.</p>
+  </footer>
+
+</div>
+</body>
+</html>
